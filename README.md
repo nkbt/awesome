@@ -33,7 +33,7 @@ Available scripts in the npm-template package:
   test
     grunt
   doc
-    JS_COV=1 NODE_ENV=test grunt cov && grunt doc
+    JS_COV=1 grunt cov && grunt doc
 
 ```
 
@@ -72,7 +72,7 @@ Done, without errors.
 $ npm run doc
 
 > npm-template@0.0.0 doc /Users/nkbt/nkbt/npm-template
-> JS_COV=1 NODE_ENV=test grunt cov && grunt doc
+> JS_COV=1 grunt cov && grunt doc
 
 Running "jscoverage:src" (jscoverage) task
 

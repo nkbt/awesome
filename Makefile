@@ -1,11 +1,26 @@
-REPORTER = dot
+
+# get Makefile directory name: http://stackoverflow.com/a/5982798/376773
+THIS_MAKEFILE_PATH:=$(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
+THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
+
+# BIN directory
+BIN := $(THIS_DIR)/node_modules/.bin
+
+# applications
+NODE ?= $(shell which node)
+NPM ?= $(NODE) $(shell which npm)
+
+install: node_modules
+
+node_modules: package.json
+	@NODE_ENV= $(NPM) install
+	@touch node_modules
+
 test:
-    @NODE_ENV=test ./node_modules/.bin/mocha -b --reporter $(REPORTER)
+	$(NPM) run test
 
-app-cov:
-    ./node_modules/.bin/jscoverage lib lib-cov
+doc:
+	$(NPM) run doc
 
-test-cov: app-cov
-    @YAD_COV=1 $(MAKE) test REPORTER=html-cov > doc/coverage.html
 
-.PHONY: test
+.PHONY: install test doc

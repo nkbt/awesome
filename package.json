@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "test": "grunt",
-    "doc": "JS_COV=1 NODE_ENV=test grunt cov && grunt doc"
+    "doc": "JS_COV=1 grunt cov && grunt doc"
   },
   "dependencies": {
     "underscore": "*"
