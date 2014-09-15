@@ -1,46 +1,50 @@
 {
-	"name": "npm-template",
-	"description": "Template to be used to create NPM modules",
-	"version": "0.0.0",
-	"private": true,
-	"author": {
-		"name": "Nik Butenko",
-		"email": "nik@butenko.me"
-	},
-	"contributors": [
-		{
-			"name": "Nik Butenko",
-			"email": "nik@butenko.me"
-		}
-	],
-	"dependencies": {
-		"underscore": "*"
-	},
-	"devDependencies": {
-		"chai": "*",
-		"grunt": "*",
-		"grunt-cli": "*",
-		"grunt-contrib-concat": "*",
-		"grunt-contrib-jshint": "*",
-		"grunt-contrib-watch": "*",
-		"grunt-mocha-cli": "*",
-		"grunt-jscoverage": "*",
-		"mocha": "*",
-		"sinon": "*",
-		"sinon-chai": "*"
-	},
-	"keywords": [
-		"npm-module",
-		"template"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/nkbt/npm-template.git"
-	},
-	"bugs": {
-		"url": "http://github.com/nkbt/npm-template/issues",
-		"email": "nik@butenko.me"
-	},
-	"main": "index",
-	"readmeFilename": "README.md"
+  "name": "npm-template",
+  "description": "Template to be used to create NPM modules",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "Nik Butenko",
+    "email": "nik@butenko.me"
+  },
+  "contributors": [
+    {
+      "name": "Nik Butenko",
+      "email": "nik@butenko.me"
+    }
+  ],
+  "scripts": {
+    "test": "grunt",
+    "doc": "JS_COV=1 NODE_ENV=test grunt cov && grunt doc"
+  },
+  "dependencies": {
+    "underscore": "*"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-mocha-cli": "*",
+    "grunt-jscoverage": "*",
+    "mocha": "*",
+    "sinon": "*",
+    "sinon-chai": "*"
+  },
+  "keywords": [
+    "npm-module",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nkbt/npm-template.git"
+  },
+  "bugs": {
+    "url": "http://github.com/nkbt/npm-template/issues",
+    "email": "nik@butenko.me"
+  },
+  "main": "index",
+  "readmeFilename": "README.md"
 }

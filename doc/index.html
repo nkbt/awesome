@@ -34,7 +34,21 @@ expect(npmTemplate.getOptions()).to.deep.equal(NpmTemplate.getDefaults());</code
         <dd><pre><code>var npmTemplate = new NpmTemplate({name: 'Test'});
 expect(npmTemplate.getOptions().name).to.equal('Test');</code></pre></dd>
         <dt>should not set any unexpected options</dt>
+        <dd><pre><code>var npmTemplate = new NpmTemplate({hello: 'World'});
+expect(npmTemplate.getOptions()).not.to.have.keys('hello');</code></pre></dd>
+        <dt>should emit OptionsRequiredError if no options passed</dt>
+        <dd><pre><code>var npmTemplate = new NpmTemplate(),
+	errorSpy = sinon.spy();
+npmTemplate.on('error', errorSpy);
+npmTemplate.setOptions();
+expect(errorSpy).to.be.calledOnce;</code></pre></dd>
+      </dl>
+    </section>
+
+    <iframe src="./coverage.html" frameborder="0" style="width: 100%; min-height: 500px;"></iframe>
+
     <script>
+
     (function (){
       function highlight(js) {
         return js
@@ -48,9 +62,15 @@ expect(npmTemplate.getOptions().name).to.equal('Test');</code></pre></dd>
           .replace(/\b(function|new|throw|return|var|if|else)\b/gm, '<span class="keyword">$1</span>')
       }
       Array.prototype.forEach.call(document.querySelectorAll('code'), function($el) {
-      	$el.innerHTML = highlight($el.innerHTML)
+        $el.innerHTML = highlight($el.innerHTML)
       });
-  })();
+    })();
+
+    (function (){
+        document.querySelector('iframe').addEventListener('load', function(event) {
+            event.target.style.height = event.target.contentWindow.document.body.scrollHeight + 'px';
+        });
+    })();
 
     </script>
   </body>

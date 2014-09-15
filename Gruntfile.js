@@ -19,21 +19,24 @@ module.exports = function (grunt) {
 			},
 			doc: {
 				options: {
-					save: 'doc/content.html',
+					save: 'doc/content.out',
 					reporter: 'doc'
 				}
+			},
+			coverage: {
+				options: {
+					save: 'doc/coverage.html',
+					reporter: 'html-cov'
+				}
 			}
-		},
-		mochaDoc: {
-			src: ['doc/header.html', 'doc/content.html', 'doc/footer.html']
 		},
 		concat: {
 			options: {
 				separator: '\n'
 			},
 			doc: {
-				src: ['doc/header.html', 'doc/content.html', 'doc/footer.html'],
-				dest: 'doc.html'
+				src: ['doc/header.html', 'doc/content.out', 'doc/footer.html'],
+				dest: 'doc/index.html'
 			}
 		},
 		jshint: {
@@ -105,7 +108,7 @@ module.exports = function (grunt) {
 
 	// Default task.
 	grunt.registerTask('default', ['jshint', 'mochacli:test']);
-	grunt.registerTask('test', 'mochacli:test');
-	grunt.registerTask('mocha-doc', ['mochacli:doc', 'concat']);
+	grunt.registerTask('doc', ['mochacli:doc', 'concat:doc']);
+	grunt.registerTask('cov', ['jscoverage', 'mochacli:coverage']);
 
 };

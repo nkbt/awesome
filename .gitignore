@@ -21,7 +21,6 @@ results
 npm-debug.log
 
 #############
-## PHP Storm
+## IntelliJ
 #############
 .idea
-atlassian-ide-plugin.xml
