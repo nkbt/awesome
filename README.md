@@ -14,7 +14,6 @@ git pull template master
 # change 'npm-template' to 'my-module'
 git commit -m "Init"
 git remote add origin git@github.com:<me>/my-module.git
-git remote add origin git@github.com:nkbt/my-module.git
 git push -u origin master
 ```
 
