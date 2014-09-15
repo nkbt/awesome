@@ -86,3 +86,7 @@ File doc/index.html created.
 
 Done, without errors.
 ```
+
+## Generated documentation
+
+[https://rawgit.com/nkbt/npm-template/master/doc/index.html]
