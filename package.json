@@ -1,7 +1,7 @@
 {
-  "name": "npm-template",
-  "description": "Template to be used to create NPM modules",
-  "version": "0.0.0",
+  "name": "awesome",
+  "description": "Awesome module",
+  "version": "1.0.0",
   "private": true,
   "author": {
     "name": "Nik Butenko",
@@ -39,10 +39,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/nkbt/npm-template.git"
+    "url": "git://github.com/nkbt/awesome.git"
   },
   "bugs": {
-    "url": "http://github.com/nkbt/npm-template/issues",
+    "url": "http://github.com/nkbt/awesome/issues",
     "email": "nik@butenko.me"
   },
   "main": "index",
